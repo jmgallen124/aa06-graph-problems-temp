@@ -1,16 +1,18 @@
 function getNeighbors(row, col, graph) {
+  let results = []
 
-  // Check top
+  const directions = [[-1, 0], [0, -1], [0,1], [1,0]]
 
-  // Check bottom
+  for (const [dr, dc] of directions) {
+    const newRow = row + dr
+    const newCol = col + dc
 
-  // Check left
+    if (newRow >= 0 && newRow < graph.length && newCol >= 0 && newCol < graph[0].length) {
+      if (graph[newRow][newCol] === 1) results.push([newRow, newCol])
+    }
+  }
 
-  // Check right
-
-  // Return neighbors
-
-  // Your code here 
+  return results
 }
 
 
